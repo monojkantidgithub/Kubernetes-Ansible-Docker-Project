@@ -5,16 +5,16 @@
   tasks:
 
     - name: create docker image using war file
-      command: docker build -t simple-devops-image:latest .
+      command: docker build -t simple-devops-imagepo:latest .
       args:
         chdir: /opt/docker
 
     - name: create tag to image
-      command: docker tag simple-devops-image monojkantiddockerhub/simple-devops-image
+      command: docker tag simple-devops-imagepo monojkantiddockerhub/simple-devops-imagepo
 
     - name: push image on to dockerhub
-      command: docker push monojkantiddockerhub/simple-devops-image
+      command: docker push monojkantiddockerhub/simple-devops-imagepo
 
     - name: remove docker images from ansible server
-      command: docker rmi tomcat simple-devops-image:latest monojkantiddockerhub/simple-devops-image
+      command: docker rmi tomcat simple-devops-imagepo:latest monojkantiddockerhub/simple-devops-imagepo
       ignore_errors: yes
