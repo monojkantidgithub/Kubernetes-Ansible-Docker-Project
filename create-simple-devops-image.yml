@@ -10,11 +10,11 @@
         chdir: /opt/docker
 
     - name: create tag to image
-      command: docker tag simple-devops-imagepo monojkantiddockerhub/simple-devops-image
+      command: docker tag simple-devops-image monojkantiddockerhub/simple-devops-imagepo
 
     - name: push image on to dockerhub
-      command: docker push monojkantiddockerhub/simple-devops-image
+      command: docker push monojkantiddockerhub/simple-devops-imagepo
 
     - name: remove docker images from ansible server
-      command: docker rmi tomcat simple-devops-imagepo:latest monojkantiddockerhub/simple-devops-image
+      command: docker rmi tomcat simple-devops-image:latest monojkantiddockerhub/simple-devops-imagepo
       ignore_errors: yes
